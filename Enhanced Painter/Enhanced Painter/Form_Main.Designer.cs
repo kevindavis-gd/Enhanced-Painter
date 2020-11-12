@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.panel_Controls = new System.Windows.Forms.Panel();
+            this.button_customColor = new System.Windows.Forms.Button();
+            this.button_SaveShape = new System.Windows.Forms.Button();
             this.comboBox_Shape = new System.Windows.Forms.ComboBox();
             this.groupBox_Color = new System.Windows.Forms.GroupBox();
+            this.pictureBox_customColor = new System.Windows.Forms.PictureBox();
             this.radioButton_Custom = new System.Windows.Forms.RadioButton();
             this.radioButton_Red = new System.Windows.Forms.RadioButton();
             this.radioButton_Black = new System.Windows.Forms.RadioButton();
@@ -44,8 +47,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearPadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkBox_Fill = new System.Windows.Forms.CheckBox();
             this.panel_Controls.SuspendLayout();
             this.groupBox_Color.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_customColor)).BeginInit();
             this.groupBox_PenSize.SuspendLayout();
             this.menuStrip_Main.SuspendLayout();
             this.SuspendLayout();
@@ -53,14 +58,37 @@
             // panel_Controls
             // 
             this.panel_Controls.BackColor = System.Drawing.Color.DarkGray;
+            this.panel_Controls.Controls.Add(this.checkBox_Fill);
+            this.panel_Controls.Controls.Add(this.button_customColor);
+            this.panel_Controls.Controls.Add(this.button_SaveShape);
             this.panel_Controls.Controls.Add(this.comboBox_Shape);
             this.panel_Controls.Controls.Add(this.groupBox_Color);
             this.panel_Controls.Controls.Add(this.groupBox_PenSize);
             this.panel_Controls.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_Controls.Location = new System.Drawing.Point(0, 28);
+            this.panel_Controls.Location = new System.Drawing.Point(0, 30);
             this.panel_Controls.Name = "panel_Controls";
-            this.panel_Controls.Size = new System.Drawing.Size(200, 544);
+            this.panel_Controls.Size = new System.Drawing.Size(250, 542);
             this.panel_Controls.TabIndex = 0;
+            // 
+            // button_customColor
+            // 
+            this.button_customColor.Location = new System.Drawing.Point(118, 291);
+            this.button_customColor.Name = "button_customColor";
+            this.button_customColor.Size = new System.Drawing.Size(70, 44);
+            this.button_customColor.TabIndex = 5;
+            this.button_customColor.Text = "Custom Color";
+            this.button_customColor.UseVisualStyleBackColor = true;
+            this.button_customColor.Click += new System.EventHandler(this.button_customColor_Click);
+            // 
+            // button_SaveShape
+            // 
+            this.button_SaveShape.Location = new System.Drawing.Point(12, 291);
+            this.button_SaveShape.Name = "button_SaveShape";
+            this.button_SaveShape.Size = new System.Drawing.Size(56, 44);
+            this.button_SaveShape.TabIndex = 4;
+            this.button_SaveShape.Text = "Save Shape";
+            this.button_SaveShape.UseVisualStyleBackColor = true;
+            this.button_SaveShape.Click += new System.EventHandler(this.button_SaveShape_Click);
             // 
             // comboBox_Shape
             // 
@@ -70,15 +98,16 @@
             "Draw Line",
             "Draw Ellipse",
             "Draw Rectangle",
-            "Draw Polygon",
-            "Fill Polygon"});
-            this.comboBox_Shape.Location = new System.Drawing.Point(12, 18);
+            "Draw Polygon"});
+            this.comboBox_Shape.Location = new System.Drawing.Point(12, 3);
             this.comboBox_Shape.Name = "comboBox_Shape";
             this.comboBox_Shape.Size = new System.Drawing.Size(182, 24);
             this.comboBox_Shape.TabIndex = 3;
+            this.comboBox_Shape.SelectedIndexChanged += new System.EventHandler(this.comboBox_Shape_SelectedIndexChanged);
             // 
             // groupBox_Color
             // 
+            this.groupBox_Color.Controls.Add(this.pictureBox_customColor);
             this.groupBox_Color.Controls.Add(this.radioButton_Custom);
             this.groupBox_Color.Controls.Add(this.radioButton_Red);
             this.groupBox_Color.Controls.Add(this.radioButton_Black);
@@ -89,12 +118,21 @@
             this.groupBox_Color.TabStop = false;
             this.groupBox_Color.Text = "Color";
             // 
+            // pictureBox_customColor
+            // 
+            this.pictureBox_customColor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox_customColor.Location = new System.Drawing.Point(149, 13);
+            this.pictureBox_customColor.Name = "pictureBox_customColor";
+            this.pictureBox_customColor.Size = new System.Drawing.Size(27, 87);
+            this.pictureBox_customColor.TabIndex = 6;
+            this.pictureBox_customColor.TabStop = false;
+            // 
             // radioButton_Custom
             // 
             this.radioButton_Custom.AutoSize = true;
             this.radioButton_Custom.Location = new System.Drawing.Point(17, 75);
             this.radioButton_Custom.Name = "radioButton_Custom";
-            this.radioButton_Custom.Size = new System.Drawing.Size(95, 26);
+            this.radioButton_Custom.Size = new System.Drawing.Size(76, 21);
             this.radioButton_Custom.TabIndex = 2;
             this.radioButton_Custom.TabStop = true;
             this.radioButton_Custom.Text = "Custom";
@@ -106,7 +144,7 @@
             this.radioButton_Red.AutoSize = true;
             this.radioButton_Red.Location = new System.Drawing.Point(17, 48);
             this.radioButton_Red.Name = "radioButton_Red";
-            this.radioButton_Red.Size = new System.Drawing.Size(69, 26);
+            this.radioButton_Red.Size = new System.Drawing.Size(55, 21);
             this.radioButton_Red.TabIndex = 1;
             this.radioButton_Red.TabStop = true;
             this.radioButton_Red.Text = "Red";
@@ -119,7 +157,7 @@
             this.radioButton_Black.Checked = true;
             this.radioButton_Black.Location = new System.Drawing.Point(17, 21);
             this.radioButton_Black.Name = "radioButton_Black";
-            this.radioButton_Black.Size = new System.Drawing.Size(79, 26);
+            this.radioButton_Black.Size = new System.Drawing.Size(63, 21);
             this.radioButton_Black.TabIndex = 0;
             this.radioButton_Black.TabStop = true;
             this.radioButton_Black.Text = "Black";
@@ -177,10 +215,10 @@
             // 
             this.panel_DrawPad.BackColor = System.Drawing.Color.LightGray;
             this.panel_DrawPad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_DrawPad.Location = new System.Drawing.Point(200, 28);
+            this.panel_DrawPad.Location = new System.Drawing.Point(250, 30);
             this.panel_DrawPad.MinimumSize = new System.Drawing.Size(648, 480);
             this.panel_DrawPad.Name = "panel_DrawPad";
-            this.panel_DrawPad.Size = new System.Drawing.Size(654, 544);
+            this.panel_DrawPad.Size = new System.Drawing.Size(648, 542);
             this.panel_DrawPad.TabIndex = 1;
             this.panel_DrawPad.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_DrawPad_Paint);
             this.panel_DrawPad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_DrawPad_MouseDown);
@@ -194,7 +232,7 @@
             this.editToolStripMenuItem});
             this.menuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_Main.Name = "menuStrip_Main";
-            this.menuStrip_Main.Size = new System.Drawing.Size(854, 28);
+            this.menuStrip_Main.Size = new System.Drawing.Size(854, 30);
             this.menuStrip_Main.TabIndex = 2;
             this.menuStrip_Main.Text = "menuStrip1";
             // 
@@ -222,16 +260,27 @@
             this.clearPadToolStripMenuItem});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // clearPadToolStripMenuItem
             // 
             this.clearPadToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
             this.clearPadToolStripMenuItem.Name = "clearPadToolStripMenuItem";
-            this.clearPadToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.clearPadToolStripMenuItem.Text = "Clear Pad";
+            this.clearPadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clearPadToolStripMenuItem.Text = "Clear Entire Pad";
             this.clearPadToolStripMenuItem.Click += new System.EventHandler(this.clearPadToolStripMenuItem_Click);
+            // 
+            // checkBox_Fill
+            // 
+            this.checkBox_Fill.AutoSize = true;
+            this.checkBox_Fill.Location = new System.Drawing.Point(12, 33);
+            this.checkBox_Fill.Name = "checkBox_Fill";
+            this.checkBox_Fill.Size = new System.Drawing.Size(95, 21);
+            this.checkBox_Fill.TabIndex = 6;
+            this.checkBox_Fill.Text = "Enable Fill";
+            this.checkBox_Fill.UseVisualStyleBackColor = true;
+            this.checkBox_Fill.CheckedChanged += new System.EventHandler(this.checkBox_Fill_CheckedChanged);
             // 
             // Form_Main
             // 
@@ -250,8 +299,10 @@
             this.Text = "Enhanced Painter";
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel_Controls.ResumeLayout(false);
+            this.panel_Controls.PerformLayout();
             this.groupBox_Color.ResumeLayout(false);
             this.groupBox_Color.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_customColor)).EndInit();
             this.groupBox_PenSize.ResumeLayout(false);
             this.groupBox_PenSize.PerformLayout();
             this.menuStrip_Main.ResumeLayout(false);
@@ -279,6 +330,10 @@
         private System.Windows.Forms.RadioButton radioButton_LargePen;
         private System.Windows.Forms.RadioButton radioButton_mediumPen;
         private System.Windows.Forms.RadioButton radioButton_smallPen;
+        private System.Windows.Forms.Button button_SaveShape;
+        private System.Windows.Forms.Button button_customColor;
+        private System.Windows.Forms.PictureBox pictureBox_customColor;
+        private System.Windows.Forms.CheckBox checkBox_Fill;
     }
 }
 
