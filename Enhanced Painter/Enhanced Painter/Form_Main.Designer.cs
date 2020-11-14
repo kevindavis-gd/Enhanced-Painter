@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_Controls = new System.Windows.Forms.Panel();
+            this.checkBox_Fill = new System.Windows.Forms.CheckBox();
             this.button_customColor = new System.Windows.Forms.Button();
             this.button_SaveShape = new System.Windows.Forms.Button();
             this.comboBox_Shape = new System.Windows.Forms.ComboBox();
@@ -47,7 +48,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearPadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBox_Fill = new System.Windows.Forms.CheckBox();
             this.panel_Controls.SuspendLayout();
             this.groupBox_Color.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_customColor)).BeginInit();
@@ -65,10 +65,21 @@
             this.panel_Controls.Controls.Add(this.groupBox_Color);
             this.panel_Controls.Controls.Add(this.groupBox_PenSize);
             this.panel_Controls.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_Controls.Location = new System.Drawing.Point(0, 30);
+            this.panel_Controls.Location = new System.Drawing.Point(0, 28);
             this.panel_Controls.Name = "panel_Controls";
-            this.panel_Controls.Size = new System.Drawing.Size(250, 542);
+            this.panel_Controls.Size = new System.Drawing.Size(250, 544);
             this.panel_Controls.TabIndex = 0;
+            // 
+            // checkBox_Fill
+            // 
+            this.checkBox_Fill.AutoSize = true;
+            this.checkBox_Fill.Location = new System.Drawing.Point(12, 33);
+            this.checkBox_Fill.Name = "checkBox_Fill";
+            this.checkBox_Fill.Size = new System.Drawing.Size(95, 21);
+            this.checkBox_Fill.TabIndex = 6;
+            this.checkBox_Fill.Text = "Enable Fill";
+            this.checkBox_Fill.UseVisualStyleBackColor = true;
+            this.checkBox_Fill.CheckedChanged += new System.EventHandler(this.checkBox_Fill_CheckedChanged);
             // 
             // button_customColor
             // 
@@ -95,7 +106,7 @@
             this.comboBox_Shape.BackColor = System.Drawing.Color.DarkGray;
             this.comboBox_Shape.FormattingEnabled = true;
             this.comboBox_Shape.Items.AddRange(new object[] {
-            "Draw Line",
+            "Draw Multiple Lines",
             "Draw Ellipse",
             "Draw Rectangle",
             "Draw Polygon"});
@@ -215,10 +226,10 @@
             // 
             this.panel_DrawPad.BackColor = System.Drawing.Color.LightGray;
             this.panel_DrawPad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_DrawPad.Location = new System.Drawing.Point(250, 30);
+            this.panel_DrawPad.Location = new System.Drawing.Point(250, 28);
             this.panel_DrawPad.MinimumSize = new System.Drawing.Size(648, 480);
             this.panel_DrawPad.Name = "panel_DrawPad";
-            this.panel_DrawPad.Size = new System.Drawing.Size(648, 542);
+            this.panel_DrawPad.Size = new System.Drawing.Size(648, 544);
             this.panel_DrawPad.TabIndex = 1;
             this.panel_DrawPad.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_DrawPad_Paint);
             this.panel_DrawPad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_DrawPad_MouseDown);
@@ -232,7 +243,7 @@
             this.editToolStripMenuItem});
             this.menuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_Main.Name = "menuStrip_Main";
-            this.menuStrip_Main.Size = new System.Drawing.Size(854, 30);
+            this.menuStrip_Main.Size = new System.Drawing.Size(854, 28);
             this.menuStrip_Main.TabIndex = 2;
             this.menuStrip_Main.Text = "menuStrip1";
             // 
@@ -260,27 +271,16 @@
             this.clearPadToolStripMenuItem});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // clearPadToolStripMenuItem
             // 
             this.clearPadToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
             this.clearPadToolStripMenuItem.Name = "clearPadToolStripMenuItem";
-            this.clearPadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clearPadToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.clearPadToolStripMenuItem.Text = "Clear Entire Pad";
             this.clearPadToolStripMenuItem.Click += new System.EventHandler(this.clearPadToolStripMenuItem_Click);
-            // 
-            // checkBox_Fill
-            // 
-            this.checkBox_Fill.AutoSize = true;
-            this.checkBox_Fill.Location = new System.Drawing.Point(12, 33);
-            this.checkBox_Fill.Name = "checkBox_Fill";
-            this.checkBox_Fill.Size = new System.Drawing.Size(95, 21);
-            this.checkBox_Fill.TabIndex = 6;
-            this.checkBox_Fill.Text = "Enable Fill";
-            this.checkBox_Fill.UseVisualStyleBackColor = true;
-            this.checkBox_Fill.CheckedChanged += new System.EventHandler(this.checkBox_Fill_CheckedChanged);
             // 
             // Form_Main
             // 

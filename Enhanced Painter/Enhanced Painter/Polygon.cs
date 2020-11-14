@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Name: Kevin Davis 
+// Class : CMPS4143
+// Assignment: Program 6
+// Date: 11/16/2020
+//
+// Description :
+// This program displays lines, rectangles and ovals using 
+// methods from Graphics. The shape draw is selected from a combo box with check boxes. 
+// Graphics methods  will be used to draw or fill. 
+// Variables will be used to keep track of the currently selected size (int) of the “lines” of the 
+// drawn shapes and color (Color object). 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using System.Collections;
 
 
@@ -32,6 +38,16 @@ namespace Enhanced_Painter
             }
             pointArray = (Point[])points.ToArray(points[0].GetType());
         }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////// Draw
+        // Name: Draw
+        // Arguments : Graphics g
+        //
+        // Description :
+        // This method takes in a graphics object and uses it to either draw a polygon or fill a
+        // polygon based on the bool fill.
+        //////////////////////////////////////////////////////////////////////////////////////////
         public override void Draw(Graphics g)
         {
             if (Fill == true)
