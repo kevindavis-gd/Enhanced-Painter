@@ -42,7 +42,7 @@ namespace Enhanced_Painter
         //
         // Description :
         // This method takes in a graphics object and uses it to either draw a rectangle or fill a
-        // rectangle based on the bool fill.
+        // rectangle based on the bool named fill.
         //////////////////////////////////////////////////////////////////////////////////////////
         public override void Draw(Graphics g)
         {

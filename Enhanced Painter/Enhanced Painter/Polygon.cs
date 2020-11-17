@@ -46,7 +46,7 @@ namespace Enhanced_Painter
         //
         // Description :
         // This method takes in a graphics object and uses it to either draw a polygon or fill a
-        // polygon based on the bool fill.
+        // polygon based on the bool named fill.
         //////////////////////////////////////////////////////////////////////////////////////////
         public override void Draw(Graphics g)
         {

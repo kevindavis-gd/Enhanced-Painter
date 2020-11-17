@@ -1,0 +1,10 @@
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\bin\Release\Enhanced Painter.exe.config
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\bin\Release\Enhanced Painter.exe
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\bin\Release\Enhanced Painter.pdb
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\obj\Release\Enhanced Painter.csprojAssemblyReference.cache
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\obj\Release\Enhanced_Painter.Form_Main.resources
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\obj\Release\Enhanced_Painter.Properties.Resources.resources
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\obj\Release\Enhanced Painter.csproj.GenerateResource.cache
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\obj\Release\Enhanced Painter.csproj.CoreCompileInputs.cache
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\obj\Release\Enhanced Painter.exe
+C:\Users\shylo\Documents\GitHub\Enhanced-Painter\Enhanced Painter\Enhanced Painter\obj\Release\Enhanced Painter.pdb
