@@ -1,7 +1,8 @@
 # Enhanced Painter
  
 PURPOSE:  
-To use radio buttons and mouse event handlers, menus, combo box and graphics concepts.      
+To use radio buttons and mouse event handlers, menus, combo box and graphics concepts.    
+
 PROBLEM: Drawing Tool  
 Your task is to develop a graphics program to display lines, rectangles and ovals using 
 methods from Graphics. The shape draw is selected from a combo box with check boxes. 
