@@ -1,6 +1,6 @@
 # Enhanced Painter
  
-![GUI](Capture0.JPG) 
+![GUI](Capture.JPG) 
 ![GUI](Capture1.JPG) 
 ![GUI](Capture2.JPG) 
 ![GUI](Capture3.JPG) 
